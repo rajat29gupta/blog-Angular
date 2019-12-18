@@ -1,0 +1,32 @@
+
+<a class="right pointer login-btn" (click)="loginCall()">Login</a>
+<h4 class="cntr">All Blogs</h4>
+
+<div class="blog">
+  <div class="container">
+    <ul *ngIf="newdata">
+      <div class="blog-image">
+        <a><img src="../../assets/img_2.jpg" height=200px width=200px></a>
+      </div>
+      <a ><h3>{{newdata.title}}</h3></a>
+      <p>Author: {{newdata.description}}</p>
+
+      <div class="blog-content">
+          <!-- <p [innerHTML]=data.metadata.description></p> -->
+          <a class="btn btn-success" >Read more...</a>
+      </div>
+    </ul>
+    <ul *ngFor="let data of allBlogs;  let i = index">
+      <div class="blog-image">
+        <a><img src="../../assets/img_2.jpg" height=200px width=200px></a>
+      </div>
+      <a ><h3>{{data.title}}</h3></a>
+      <p>Author: {{data.metadata.author}}</p>
+
+      <div class="blog-content">
+          <p [innerHTML]=data.metadata.description></p>
+          <a class="btn btn-success" >Read more...</a>
+      </div>
+    </ul>
+  </div>
+</div>
